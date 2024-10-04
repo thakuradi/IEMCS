@@ -1,38 +1,130 @@
 "use client";
-import React, { useState } from 'react';
-import { Menu, MenuItem, HoveredLink, ProductItem } from './ui/navbar-menu';
+import React, { useState } from "react";
+import Image from "next/image"; // Ensure you are using the correct Image component
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"; // Hamburger and close icons for mobile
+import { Menu, MenuItem, HoveredLink } from "./ui/navbar-menu";
 
 const Navbar: React.FC = () => {
   const [active, setActive] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md p-4">
+    <nav className="bg-white shadow-md p-4 relative z-50">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">IEMCS</h1>
+        {/* Logo on the left */}
+        <div className="flex place-items-start ">
+          <Image
+            src="/iemcs_logo.jpg" // Ensure the path is correct without '/public'
+            alt="IEMCS Logo"
+            width={140}
+            height={70}
+            className="mr-8 "
+          />
+        </div>
 
-        <Menu setActive={setActive}>
-          <MenuItem active={active} setActive={setActive} item="Home">
-            <HoveredLink href="#home">Home</HoveredLink>
-          </MenuItem>
-          
-          <MenuItem active={active} setActive={setActive} item="Services">
-            <ProductItem 
-              title="Web Development" 
-              description="Custom web solutions for your business." 
-              href="#services" 
-              src="https://via.placeholder.com/140x70" 
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          {mobileMenuOpen ? (
+            <HiOutlineX
+              className="w-8 h-8"
+              onClick={() => setMobileMenuOpen(false)}
             />
-          </MenuItem>
+          ) : (
+            <HiOutlineMenu
+              className="w-8 h-8"
+              onClick={() => setMobileMenuOpen(true)}
+            />
+          )}
+        </div>
 
-          <MenuItem active={active} setActive={setActive} item="About">
-            <HoveredLink href="#about">About</HoveredLink>
-          </MenuItem>
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex flex-grow justify-start ml-6"> {/* Make the menu visible only on large screens */}
+          <Menu setActive={setActive}>
+            <MenuItem active={active} setActive={setActive} item="Home">
+              <HoveredLink href="#home">Home</HoveredLink>
+            </MenuItem>
 
-          <MenuItem active={active} setActive={setActive} item="Contact">
-            <HoveredLink href="#contact">Contact</HoveredLink>
-          </MenuItem>
-        </Menu>
+            <MenuItem active={active} setActive={setActive} item="Services">
+              <div className="relative">
+                <ul>
+                  <li className="p-2 hover:bg-gray-100">
+                    <HoveredLink href="#web-development">
+                      Web Development
+                    </HoveredLink>
+                  </li>
+                  <li className="p-2 hover:bg-gray-100">
+                    <HoveredLink href="#seo-services">SEO Services</HoveredLink>
+                  </li>
+                  <li className="p-2 hover:bg-gray-100">
+                    <HoveredLink href="#digital-marketing">
+                      Digital Marketing
+                    </HoveredLink>
+                  </li>
+                </ul>
+              </div>
+            </MenuItem>
+
+            <MenuItem active={active} setActive={setActive} item="About">
+              <HoveredLink href="#about">About</HoveredLink>
+            </MenuItem>
+
+            <MenuItem active={active} setActive={setActive} item="Contact">
+              <HoveredLink href="#contact">Contact</HoveredLink>
+            </MenuItem>
+          </Menu>
+        </div>
+
+        {/* "Get Consultancy" Button in Desktop */}
+        <div className="hidden lg:block ml-auto">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+            Get Consultancy
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden mt-4 space-y-2">
+          <Menu setActive={setActive} className="flex flex-col space-y-4">
+            <MenuItem active={active} setActive={setActive} item="Home">
+              <HoveredLink href="#home">Home</HoveredLink>
+            </MenuItem>
+
+            <MenuItem active={active} setActive={setActive} item="Services">
+              <ul className="space-y-2">
+                <li className="hover:bg-gray-100">
+                  <HoveredLink href="#web-development">
+                    Web Development
+                  </HoveredLink>
+                </li>
+                <li className="hover:bg-gray-100">
+                  <HoveredLink href="#seo-services">SEO Services</HoveredLink>
+                </li>
+                <li className="hover:bg-gray-100">
+                  <HoveredLink href="#digital-marketing">
+                    Digital Marketing
+                  </HoveredLink>
+                </li>
+              </ul>
+            </MenuItem>
+
+            <MenuItem active={active} setActive={setActive} item="About">
+              <HoveredLink href="#about">About</HoveredLink>
+            </MenuItem>
+
+            <MenuItem active={active} setActive={setActive} item="Contact">
+              <HoveredLink href="#contact">Contact</HoveredLink>
+            </MenuItem>
+
+            {/* Add "Get Consultancy" button in mobile menu */}
+            <div className="flex justify-center mt-4">
+              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
+                Get Consultancy
+              </button>
+            </div>
+          </Menu>
+        </div>
+      )}
     </nav>
   );
 };
