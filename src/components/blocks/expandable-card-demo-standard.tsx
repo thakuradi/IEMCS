@@ -208,7 +208,7 @@ const cards = [
   {
     description: "Synopsis:",
     title: "Rovers Surveillance​",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    src: "/Rover_surveillance.png",
     ctaText: "Read ",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
