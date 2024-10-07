@@ -4,6 +4,7 @@ import { HoverEffect } from "./ui/card-hover-effect"; // Adjust the path as need
 import { FiSettings, FiBarChart2, FiCpu, FiDatabase } from "react-icons/fi"; // Import icons
 import ExpandableCardDemo from "./blocks/expandable-card-demo-grid";
 import { BentoGridThirdDemo } from "./BentoGridThirdDemo";
+import { FiClipboard, FiFileText, FiMonitor, FiShoppingCart, FiTrendingUp } from "react-icons/fi";
 
 const Services: React.FC = () => {
   // Define your services items (removed images)
@@ -51,53 +52,38 @@ const Services: React.FC = () => {
   const managementServices = [
     {
       title: "Business Process Consulting",
-      description: (
-        <span className="text-sm">
-          Our Business Process Consulting includes a thorough process audit, innovative process design, and strategic business process re-engineering to enhance operational efficiency and effectiveness.
-        </span>
-      ),
+      description: "Process audit, process design, and business process re-engineering services to improve efficiency and streamline operations.",
       className: "md:col-span-1",
-      icon: <FiSettings className="h-4 w-4 text-neutral-500" />, // Using FiSettings icon
+      icon: <FiClipboard className="h-4 w-4 text-neutral-500" />,
+      link: "/business-process-consulting", // Example link
     },
     {
       title: "HR Consulting Service",
-      description: (
-        <span className="text-sm">
-          Our HR Consulting Service encompasses a comprehensive HR audit, effective talent management strategies, and organizational development initiatives to optimize human capital.
-        </span>
-      ),
+      description: "Comprehensive HR audit, talent management, and organizational development services for enhanced workforce performance.",
       className: "md:col-span-1",
-      icon: <FiBarChart2 className="h-4 w-4 text-neutral-500" />, // Using FiBarChart2 icon
+      icon: <FiFileText className="h-4 w-4 text-neutral-500" />,
+      link: "/hr-consulting-service", // Example link
     },
     {
       title: "Digital Transformation Service",
-      description: (
-        <span className="text-sm">
-          Our Digital Transformation Service includes tailored digital marketing strategies, comprehensive social media management, and a detailed digital transformation roadmap to drive business growth in the digital age.
-        </span>
-      ),
+      description: "End-to-end digital marketing strategy, social media management, and transformation roadmaps for business growth in the digital age.",
       className: "md:col-span-1",
-      icon: <FiCpu className="h-4 w-4 text-neutral-500" />, // Using FiCpu icon
+      icon: <FiMonitor className="h-4 w-4 text-neutral-500" />,
+      link: "/digital-transformation-service", // Example link
     },
     {
       title: "Sales and Marketing Service",
-      description: (
-        <span className="text-sm">
-          Our Sales and Marketing Service offers sales training workbook creation, strategic sales strategy development, and in-depth market research and analysis to empower your sales team.
-        </span>
-      ),
+      description: "Sales training workbook creation, strategy development, and market research to drive business success and improve customer engagement.",
       className: "md:col-span-2",
-      icon: <FiDatabase className="h-4 w-4 text-neutral-500" />, // Using FiDatabase icon
+      icon: <FiShoppingCart className="h-4 w-4 text-neutral-500" />,
+      link: "/sales-marketing-service", // Example link
     },
     {
       title: "Start-up and Scaling-up Consulting",
-      description: (
-        <span className="text-sm">
-          Our Start-up and Scaling-up Consulting focuses on business plan development, funding and investment strategies, and scaling-up strategies to support your growth journey.
-        </span>
-      ),
+      description: "Business plan development, funding strategies, and scaling-up solutions for entrepreneurs and growing businesses.",
       className: "md:col-span-1",
-      icon: <FiSettings className="h-4 w-4 text-neutral-500" />, // Reusing FiSettings for illustration
+      icon: <FiTrendingUp className="h-4 w-4 text-neutral-500" />,
+      link: "/startup-scaling-consulting", // Example link
     },
   ];
   
@@ -125,11 +111,17 @@ const Services: React.FC = () => {
             <HoverEffect items={ITservices}  />
           </div>
         </div>
-        <div className="lg:w-full w-full sc-statistics-area sc-pl-70 sc-md-pl-15 sc-md-mt-30">
+        <div className="lg:w-full w-full sc-statistics-area sc-pl-70 sc-md-pl-15 sc-md-mt-30 mb-20">
           {/* Grid for Cards - 3 items per row */}
           <div className="grid lg:grid gap-8">
             <BentoGridThirdDemo/>
           </div>
+        </div>
+        <div>
+        <div className="text-center">
+          <h2 className="text-4xl font-bold mb-6 text-blue-600">Management Solutions</h2>
+        </div>
+        <HoverEffect items={managementServices}  />
         </div>
         
 
