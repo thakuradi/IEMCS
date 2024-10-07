@@ -7,7 +7,7 @@ import { BentoGridThirdDemo } from "./BentoGridThirdDemo";
 import { FiClipboard, FiFileText, FiMonitor, FiShoppingCart, FiTrendingUp } from "react-icons/fi";
 
 const Services: React.FC = () => {
-  // Define your services items (removed images)
+  
   const ITservices = [
     {
       title: "Data & Analytics",

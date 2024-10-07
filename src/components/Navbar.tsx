@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image"; // Ensure you are using the correct Image component
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi"; // Hamburger and close icons for mobile
 import { Menu, MenuItem, HoveredLink } from "./ui/navbar-menu";
@@ -7,9 +7,30 @@ import { Menu, MenuItem, HoveredLink } from "./ui/navbar-menu";
 const Navbar: React.FC = () => {
   const [active, setActive] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Effect to handle scrolling and setting the navbar state
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) { // Change the value to the scroll position at which the navbar should change
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="bg-white shadow-md p-4 relative z-50">
+    <nav
+      className={`${
+        isScrolled ? "bg-white shadow-md fixed top-0 w-full" : "bg-transparent"
+      } p-4 z-50 transition duration-300`}
+    >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo on the left */}
         <div className="flex place-items-start ">
@@ -38,7 +59,8 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex flex-grow justify-start ml-6"> {/* Make the menu visible only on large screens */}
+        <div className="hidden lg:flex flex-grow justify-start ml-6">
+          {/* Make the menu visible only on large screens */}
           <Menu setActive={setActive}>
             <MenuItem active={active} setActive={setActive} item="Home">
               <HoveredLink href="#home">Home</HoveredLink>
