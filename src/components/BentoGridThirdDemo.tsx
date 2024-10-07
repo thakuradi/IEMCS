@@ -16,9 +16,10 @@ export function BentoGridThirdDemo() {
   return (
     <div className="max-w-4xl mx-auto">
       {/* Header for the Bento Grid */}
-      <h2 className="text-3xl font-bold text-center mb-8">
-        Helping Solve Your Critical Business Issues
-      </h2>
+      <h2 className="text-5xl font-bold text-center mb-20">
+    
+    <span className="text-yellow-500"> Engineering Solutions </span>
+  </h2>
       
       <BentoGrid className="md:auto-rows-[20rem]">
         {items.map((item, i) => (
@@ -204,14 +205,14 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/Enginering-services.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Just code in Vanilla Javascript
+        Smart Agriculture
         </p>
         <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Delusional
@@ -219,14 +220,14 @@ const SkeletonFour = () => {
       </motion.div>
       <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/Enginering-services.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
+        Healthcare Robotics
         </p>
         <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Sensible
@@ -237,14 +238,14 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/Enginering-services.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
         <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
+        Custom Manufacturing 
         </p>
         <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
           Helpless
@@ -290,22 +291,22 @@ const SkeletonFive = () => {
         className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
       >
         <Image
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="/Enginering-services.png"
           alt="avatar"
           height="100"
           width="100"
           className="rounded-full h-10 w-10"
         />
         <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
+        We deliver comprehensive engineering solutions designed to optimize operations, improve efficiency, and drive innovation across industries.
+
         </p>
       </motion.div>
       <motion.div
         variants={variantsSecond}
         className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
       >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
+        <p className="text-xs text-neutral-500">.... </p>
         <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
       </motion.div>
     </motion.div>
@@ -313,10 +314,10 @@ const SkeletonFive = () => {
 };
 const items = [
   {
-    title: "AI Content Generation",
+    title: "Internet Of Things",
     description: (
       <span className="text-sm">
-        Experience the power of AI in generating unique content.
+        The Internet of Things (IoT) connects devices and systems to enhance efficiency across sectors, enabling smart agriculture, asset tracking, energy management, and improved healthcare through real-time monitoring.
       </span>
     ),
     header: <SkeletonOne />,
@@ -324,10 +325,10 @@ const items = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Automated Proofreading",
+    title: "Robotics & Automation",
     description: (
       <span className="text-sm">
-        Let AI handle the proofreading of your documents.
+        Robotics and automation drive innovation by improving service delivery in hospitality, enhancing safety in defense, revolutionizing healthcare, and optimizing operations with autonomous mobile robots in various industries.
       </span>
     ),
     header: <SkeletonTwo />,
@@ -335,10 +336,10 @@ const items = [
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Contextual Suggestions",
+    title: "3D Printing",
     description: (
       <span className="text-sm">
-        Get AI-powered suggestions based on your writing context.
+        3D printing technology allows for rapid prototyping and customization in manufacturing, empowering businesses to innovate and meet specific consumer demands efficiently.
       </span>
     ),
     header: <SkeletonThree />,
@@ -346,22 +347,21 @@ const items = [
     icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Sentiment Analysis",
+    title: "Mechanical",
     description: (
       <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
+        Mechanical engineering applies principles of physics and materials science to design and analyze systems, ensuring efficiency and functionality in a wide range of applications from machines to structures.
       </span>
     ),
     header: <SkeletonFour />,
     className: "md:col-span-2",
     icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
   },
-
   {
-    title: "Text Summarization",
+    title: "Electrical",
     description: (
       <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
+        Electrical engineering focuses on designing and developing electrical systems, ensuring reliable energy distribution and powering modern technology, from consumer electronics to large-scale infrastructure.
       </span>
     ),
     header: <SkeletonFive />,
@@ -369,3 +369,4 @@ const items = [
     icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
   },
 ];
+
