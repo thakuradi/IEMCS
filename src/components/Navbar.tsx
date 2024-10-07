@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex flex-grow justify-start ml-6">
+        <div className="hidden lg:flex flex-grow justify-start ml-6 z-50 ">
           {/* Make the menu visible only on large screens */}
           <Menu setActive={setActive}>
             <MenuItem active={active} setActive={setActive} item="Home">
@@ -71,15 +71,15 @@ const Navbar: React.FC = () => {
                 <ul>
                   <li className="p-2 hover:bg-gray-100">
                     <HoveredLink href="#web-development">
-                      Web Development
+                    IT  Products & Services​
                     </HoveredLink>
                   </li>
                   <li className="p-2 hover:bg-gray-100">
-                    <HoveredLink href="#seo-services">SEO Services</HoveredLink>
+                    <HoveredLink href="#seo-services">Engineering Solutions ​</HoveredLink>
                   </li>
                   <li className="p-2 hover:bg-gray-100">
                     <HoveredLink href="#digital-marketing">
-                      Digital Marketing
+                    Management Solutions​
                     </HoveredLink>
                   </li>
                 </ul>
@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
             </MenuItem>
 
             <MenuItem active={active} setActive={setActive} item="About">
-              <HoveredLink href="#about">About</HoveredLink>
+              <HoveredLink href="#about">Patent</HoveredLink>
             </MenuItem>
 
             <MenuItem active={active} setActive={setActive} item="Contact">
