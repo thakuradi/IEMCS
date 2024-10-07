@@ -28,10 +28,10 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`${
-        isScrolled ? "bg-white shadow-md fixed top-0 w-full" : "bg-transparent"
-      } p-4 z-50 transition duration-300`}
+        isScrolled ? "bg-[#EFEDE3] shadow-md fixed top-0 w-full" : "bg-transparent"
+      } p-4 bg-[#EFEDE3] z-50 transition duration-300`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="container bg-[#EFEDE3] mx-auto flex justify-between items-center">
         {/* Logo on the left */}
         <div className="flex place-items-start ">
           <Image
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex flex-grow justify-start ml-6 z-50 ">
+        <div className="hidden bg-[#EFEDE3] lg:flex  flex-grow justify-start ml-6 z-50 ">
           {/* Make the menu visible only on large screens */}
           <Menu setActive={setActive}>
             <MenuItem active={active} setActive={setActive} item="Home">
