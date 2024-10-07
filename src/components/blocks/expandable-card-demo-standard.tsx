@@ -223,7 +223,7 @@ To explore different rough surfaces for surveillance purpose. Rovers are built u
     description: "Personal cooling through cold water showering  ​",
     title: "IJAR",
     src: "/IJAR.png",
-    ctaText: "Play",
+    ctaText: "Read",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -240,7 +240,7 @@ An ultimate solution for Heatwave. It has been designed thinking of the areas wh
     description: "",
     title: "Marine Battle Bot ​",
     src: "/MARINE-battle-bot.png",
-    ctaText: "Play",
+    ctaText: "Read",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -256,7 +256,7 @@ An autonomous vessel intended for various military uses. This battle bot's basic
     description: "",
     title: "Sand Battery ​",
     src: "/Sand-battery.png",
-    ctaText: "Play",
+    ctaText: "Read",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
@@ -272,7 +272,7 @@ Storing energy from renewable sources in the form of heat from sand. At first he
     description: "",
     title: " Galilean telescope",
     src: "/Galilean telescope.png",
-    ctaText: "Play",
+    ctaText: "Read",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
