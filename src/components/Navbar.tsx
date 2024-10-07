@@ -79,13 +79,12 @@ const Navbar: React.FC = () => {
                   </li>
                   <li className="p-2 hover:bg-gray-100">
                     <HoveredLink href="#digital-marketing">
-                    Management Solutions​
+                    Management Solutions.​
                     </HoveredLink>
                   </li>
                 </ul>
               </div>
             </MenuItem>
-
             <MenuItem active={active} setActive={setActive} item="About">
               <HoveredLink href="#about">Patent</HoveredLink>
             </MenuItem>
