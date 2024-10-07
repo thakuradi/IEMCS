@@ -7,7 +7,7 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  { name: "John Doe", feedback: "AchieveX transformed our business with their innovative software solutions." },
+  { name: "John Doe", feedback: "IEMCS transformed our business with their innovative software solutions." },
   { name: "Jane Smith", feedback: "Their team was professional and delivered on time. Highly recommended!" },
   { name: "Alice Johnson", feedback: "An exceptional experience from start to finish." },
   { name: "Bob Brown", feedback: "The best decision we made was to partner with AchieveX." },
