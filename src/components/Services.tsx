@@ -111,7 +111,7 @@ const Services: React.FC = () => {
             <HoverEffect items={ITservices}  />
           </div>
         </div>
-        <div className="lg:w-full w-full sc-statistics-area sc-pl-70 sc-md-pl-15 sc-md-mt-30 mb-20">
+        <div className="lg:w-full w-full sc-statistics-area  bg-gray-100 sc-pl-70 sc-md-pl-15 sc-md-mt-30 mb-20">
           {/* Grid for Cards - 3 items per row */}
           <div className="grid lg:grid gap-8">
             <BentoGridThirdDemo/>
