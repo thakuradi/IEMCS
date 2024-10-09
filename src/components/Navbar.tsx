@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-
+  // Effect to handle scrolling and setting the navbar state
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) { // Change the value to the scroll position at which the navbar should change
