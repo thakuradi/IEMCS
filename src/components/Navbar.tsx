@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden bg-[#EFEDE3] lg:flex  flex-grow justify-start ml-6 z-50 ">
+        <div className="hidden  lg:flex  flex-grow justify-start ml-6 z-50 ">
           {/* Make the menu visible only on large screens */}
           <Menu setActive={setActive}>
             <MenuItem active={active} setActive={setActive} item="Home">
@@ -97,9 +97,12 @@ const Navbar: React.FC = () => {
 
         {/* "Get Consultancy" Button in Desktop */}
         <div className="hidden lg:block ml-auto">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-            Get Consultancy
-          </button>
+        <button className="p-[3px] relative">
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+  <div className="px-8 py-2  bg-white rounded-[6px]  relative group transition duration-200 text-black hover:bg-transparent">
+    Contact
+  </div>
+</button>
         </div>
       </div>
 
@@ -139,9 +142,12 @@ const Navbar: React.FC = () => {
 
             {/* Add "Get Consultancy" button in mobile menu */}
             <div className="flex justify-center mt-4">
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-                Get Consultancy
-              </button>
+            <button className="p-[3px] relative">
+  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+  <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+    Lit up borders
+  </div>
+</button>
             </div>
           </Menu>
         </div>
@@ -149,5 +155,6 @@ const Navbar: React.FC = () => {
     </nav>
   );
 };
+
 
 export default Navbar;

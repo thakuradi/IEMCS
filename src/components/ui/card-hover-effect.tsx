@@ -11,6 +11,7 @@ export const HoverEffect = ({
     title: string;
     description: string;
     link: string;
+    icon: React.ReactNode; // Added icon property
   }[];
   className?: string;
 }) => {
@@ -19,18 +20,18 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-rows-2 cols-3 gap-4 py-10 md:grid-cols-3",
+        "grid grid-rows-1 cols-3 gap-4 py-10 md:grid-cols-3",
         className
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
-          className="relative group  block p-2 h-full w-full"
-          onMouseEnter={() => setHoveredIndex(idx)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
+         <Link
+         href={item?.link}
+         key={item?.link || idx}  // Fallback to index if the link is empty or non-unique
+         className="relative group block p-2 h-full w-full"
+         onMouseEnter={() => setHoveredIndex(idx)}
+         onMouseLeave={() => setHoveredIndex(null)}
+       >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
@@ -48,7 +49,7 @@ export const HoverEffect = ({
               />
             )}
           </AnimatePresence>
-          <Card>
+          <Card icon={<CardIcon>{item.icon}</CardIcon>}>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
@@ -58,26 +59,40 @@ export const HoverEffect = ({
   );
 };
 
+
 export const Card = ({
   className,
   children,
+  icon,
 }: {
   className?: string;
   children: React.ReactNode;
+  icon?: React.ReactNode; // Optional icon prop for the Card
 }) => {
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-blue-100 border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-white border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
-      </div>
+      <div className="grid grid-rows-2 items-center h-full">
+  {icon && (
+    <div className="flex justify-center items-center row-span-1 h-12">
+      {/* The icon in the first row with a smaller height */}
+      <CardIcon>{icon}</CardIcon>
+    </div>
+  )}
+  <div className="p-4 row-span-1">
+    {/* Text content in the second row */}
+    {children}
+  </div>
+</div>
+
     </div>
   );
 };
+
 export const CardTitle = ({
   className,
   children,
@@ -109,3 +124,22 @@ export const CardDescription = ({
     </p>
   );
 };
+export const CardIcon = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        "icons-container rounded-xl p-2 border-teal-500 border-2 shadow-sm bg-white inline-flex items-center justify-center",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
